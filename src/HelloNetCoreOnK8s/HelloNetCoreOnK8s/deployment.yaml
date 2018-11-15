@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-netcore-k8s
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hello-netcore-k8s
+    spec:
+      containers:
+      - name: hello-netcore-k8s
+        imagePullPolicy: Never
+        image: hello-netcore-k8s
+        ports:
+        - containerPort: 80
